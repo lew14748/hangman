@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Dictionary {
     private ArrayList<String> Words = new ArrayList<>();
 
-    public Dictionary(){};
+    public Dictionary(){}
 
     public Dictionary(String filename) {
         readWordsFromFile(filename);
