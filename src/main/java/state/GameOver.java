@@ -1,6 +1,7 @@
 package state;
 
 import utils.Menu;
+import utils.HangedManDrawer;
 
 public class GameOver extends AbstractState {
     public void run() {
@@ -16,6 +17,7 @@ public class GameOver extends AbstractState {
             adapter.write("Вы победили, желаете сыграть еще?");
         } else {
             adapter.write("Вы проиграли, желаете сыграть еще?");
+            HangedManDrawer.printHangedMan(getContext().getGame().getLifeCounter());
         }
         Menu.renderMenu();
     }

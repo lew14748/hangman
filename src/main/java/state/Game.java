@@ -1,6 +1,7 @@
 package state;
 
 import utils.Menu;
+import utils.HangedManDrawer;
 
 public class Game extends AbstractState {
     @Override
@@ -17,6 +18,7 @@ public class Game extends AbstractState {
         adapter.clearConsole();
         getContext().getGame().getHiddenWord().printMaskedWord();
         getContext().getGame().getHiddenWord().printWronglyGuessedLetters();
+        HangedManDrawer.printHangedMan(getContext().getGame().getLifeCounter());
         adapter.write("Осталось жизней - " + getContext().getGame().getLifeCounter());
     }
 
