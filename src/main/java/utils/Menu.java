@@ -22,7 +22,7 @@ public class Menu {
         } else return "WRONG INPUT";
     }
 
-    public static char handleGameInput() {
+    public static char validateGameInput() {
         String input = adapter.read();
         if (Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC) {
             return input.charAt(0);
