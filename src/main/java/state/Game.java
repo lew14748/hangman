@@ -7,12 +7,8 @@ public class Game extends AbstractState {
     public void run() {
         render();
         guessLetter();
-        if(getContext().getGame().checkLose()) {
-            goToAlternativeState();
-        } else {
-            if (getContext().getGame().checkWin()) {
-                goToNextState();
-            }
+        if(getContext().getGame().checkLose() || getContext().getGame().checkWin()) {
+            goToNextState();
         }
     }
 
