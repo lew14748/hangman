@@ -9,7 +9,7 @@ public class HiddenWord {
     private final List<String> actualWord = new ArrayList<>();
     private final List<String> templateWord = new ArrayList<>();
     private final List<String> maskedWord = new ArrayList<>();
-    private final Set<String> wronglyGuessedLetters = new HashSet<String>();
+    private final Set<String> wronglyGuessedLetters = new HashSet<>();
     private final List<String> correctlyGuessedLetters = new ArrayList<>();
 
     public boolean guessLetter(String letter) {
@@ -51,7 +51,7 @@ public class HiddenWord {
         return maskedWord;
     }
 
-    public int getCorrectlyGuessedLettersCount(){
+    public int getCorrectlyGuessedLettersCount() {
         return correctlyGuessedLetters.size();
     }
 }

@@ -1,6 +1,5 @@
 package state;
 
-import utils.IOAdapter;
 import utils.Menu;
 
 public class GameOver extends AbstractState {
@@ -12,7 +11,7 @@ public class GameOver extends AbstractState {
     public void render() {
         adapter.clearConsole();
         Menu.renderTitleBanner();
-        if(getContext().getGame().checkWin()){
+        if (getContext().getGame().checkWin()) {
             adapter.write("Вы победили, желаете сыграть еще?");
         } else {
             adapter.write("Вы проиграли, желаете сыграть еще?");

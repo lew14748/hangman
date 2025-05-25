@@ -1,11 +1,10 @@
 package logic;
 
 public class Game {
-    private Dictionary dictionary;
-    private HiddenWord hiddenWord;
+    private final Dictionary dictionary;
+    private final HiddenWord hiddenWord;
     private int lifeCounter = 7;
-    public Game() {
-    }
+
 
     public Game(String filename) {
         dictionary = new Dictionary(filename);
@@ -13,17 +12,17 @@ public class Game {
         hiddenWord.initWords(dictionary.getRandomWord());
     }
 
-    public void remakeGame(){
+    public void remakeGame() {
         restoreLifeCounter();
         hiddenWord.clearWords();
         hiddenWord.initWords(dictionary.getRandomWord());
     }
 
-    public boolean checkWin(){
+    public boolean checkWin() {
         return (hiddenWord.getCorrectlyGuessedLettersCount() == hiddenWord.getActualWord().size());
     }
 
-    public boolean checkLose(){
+    public boolean checkLose() {
         return (lifeCounter == 0);
     }
 
@@ -39,20 +38,9 @@ public class Game {
         return lifeCounter;
     }
 
-    public Dictionary getDictionary() {
-        return dictionary;
-    }
-
-    public void setDictionary(Dictionary dictionary) {
-        this.dictionary = dictionary;
-    }
 
     public HiddenWord getHiddenWord() {
         return hiddenWord;
-    }
-
-    public void setHiddenWord(HiddenWord hiddenWord) {
-        this.hiddenWord = hiddenWord;
     }
 
 

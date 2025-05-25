@@ -7,7 +7,7 @@ public class Game extends AbstractState {
     public void run() {
         render();
         guessLetter();
-        if(getContext().getGame().checkLose() || getContext().getGame().checkWin()) {
+        if (getContext().getGame().checkLose() || getContext().getGame().checkWin()) {
             goToNextState();
         }
     }
@@ -17,12 +17,11 @@ public class Game extends AbstractState {
         adapter.clearConsole();
         getContext().getGame().getHiddenWord().printMaskedWord();
         adapter.write("Осталось жизней - " + getContext().getGame().getLifeCounter());
-        //adapter.write("Game should be here");
     }
 
-    private void guessLetter(){
-        String validatedGuessedLetter = String.valueOf(Menu.validateGameInput());
-        if(!validatedGuessedLetter.equals("WRONG INPUT")){
+    private void guessLetter() {
+        String validatedGuessedLetter = Menu.validateGameInput();
+        if (!validatedGuessedLetter.equals("WRONG INPUT")) {
             if (!getContext().getGame().getHiddenWord().guessLetter(validatedGuessedLetter))
                 getContext().getGame().decreaseLifeCount();
         }
