@@ -1,7 +1,5 @@
 package logic;
 
-import java.util.Set;
-
 public class Game {
     private Dictionary dictionary;
     private HiddenWord hiddenWord;
@@ -12,6 +10,12 @@ public class Game {
     public Game(String filename) {
         dictionary = new Dictionary(filename);
         hiddenWord = new HiddenWord();
+        hiddenWord.initWords(dictionary.getRandomWord());
+    }
+
+    public void remakeGame(){
+        restoreLifeCounter();
+        hiddenWord.clearWords();
         hiddenWord.initWords(dictionary.getRandomWord());
     }
 
@@ -27,7 +31,7 @@ public class Game {
         lifeCounter--;
     }
 
-    public void resetLifeCounter() {
+    public void restoreLifeCounter() {
         lifeCounter = 7;
     }
 

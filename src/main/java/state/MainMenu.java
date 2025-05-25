@@ -14,7 +14,7 @@ public class MainMenu extends AbstractState {
     @Override
     public void render() {
         adapter.clearConsole();
-        renderTitleBanner();
+        Menu.renderTitleBanner();
         Menu.renderMenu();
     }
 
@@ -28,14 +28,5 @@ public class MainMenu extends AbstractState {
         getContext().goToState(new state.Exit());
     }
 
-    private void renderTitleBanner() {
-        String TITLE_BANNER =
-                " ██╗  ██╗ █████╗ ███╗  ██╗ ██████╗ ███╗   ███╗ █████╗ ███╗  ██╗\n" +
-                        " ██║  ██║██╔══██╗████╗ ██║██╔════╝ ████╗ ████║██╔══██╗████╗ ██║\n" +
-                        " ███████║███████║██╔██╗██║██║  ███╗██╔████╔██║███████║██╔██╗██║\n" +
-                        " ██╔══██║██╔══██║██║╚████║██║   ██║██║╚██╔╝██║██╔══██║██║╚████║\n" +
-                        " ██║  ██║██║  ██║██║ ╚███║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚███║\n" +
-                        " ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚══╝";
-        IOAdapter.getInstance().write(TITLE_BANNER);
-    }
+
 }

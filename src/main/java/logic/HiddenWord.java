@@ -34,6 +34,9 @@ public class HiddenWord {
     public void clearWords() {
         actualWord.clear();
         maskedWord.clear();
+        templateWord.clear();
+        correctlyGuessedLetters.clear();
+        wronglyGuessedLetters.clear();
     }
 
     public void printMaskedWord() {
