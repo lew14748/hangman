@@ -24,7 +24,7 @@ public class Menu {
 
     public static String validateGameInput() {
         String input = adapter.read();
-        if (!input.isBlank() && Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC) {
+        if (!input.isBlank() && Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC && input.length() == 1) {
             return String.valueOf(input.toLowerCase().charAt(0));
         } else return "WRONG INPUT";
     }
