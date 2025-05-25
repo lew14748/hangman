@@ -30,4 +30,10 @@ public class IOAdapter {
             System.out.print("\033[H\033[2J");
         }
     }
+
+    public void clearConsole() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
 }

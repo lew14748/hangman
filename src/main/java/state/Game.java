@@ -10,7 +10,8 @@ public class Game extends AbstractState {
     }
 
     public void render() {
-        IOAdapter.getInstance().write("Game should be here");
+        adapter.clearConsole();
+        adapter.write("Game should be here");
     }
 
     @Override

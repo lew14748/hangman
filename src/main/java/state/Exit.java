@@ -9,7 +9,8 @@ public class Exit extends AbstractState {
     }
 
     public void render() {
-        IOAdapter.getInstance().write("Спасибо за игру!");
+        adapter.clearConsole();
+        adapter.write("Спасибо за игру!");
     }
 
     @Override

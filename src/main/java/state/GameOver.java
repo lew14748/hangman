@@ -1,11 +1,14 @@
 package state;
 
+import utils.IOAdapter;
+
 public class GameOver extends AbstractState {
     public void run() {
         render();
     }
 
     public void render() {
+        adapter.clearConsole();
         //if( getContext())
     }
 

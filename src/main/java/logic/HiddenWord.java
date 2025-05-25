@@ -12,6 +12,7 @@ public class HiddenWord {
     private final ArrayList<String> actualWord = new ArrayList<>();
     private final ArrayList<String> maskedWord = new ArrayList<>();
 
+
     public boolean guessLetter(String letter) {
         if (actualWord.contains(letter)) {
             while (actualWord.contains(letter)) {

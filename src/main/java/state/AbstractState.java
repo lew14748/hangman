@@ -6,6 +6,7 @@ import utils.Menu;
 
 public abstract class AbstractState {
     private Context context;
+    IOAdapter adapter = IOAdapter.getInstance();
 
     public abstract void render();
 

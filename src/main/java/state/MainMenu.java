@@ -13,6 +13,7 @@ public class MainMenu extends AbstractState {
 
     @Override
     public void render() {
+        adapter.clearConsole();
         renderTitleBanner();
         Menu.renderMenu();
     }

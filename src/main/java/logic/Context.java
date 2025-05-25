@@ -4,9 +4,13 @@ import state.AbstractState;
 
 public class Context {
 
-
+    private Game game;
     private AbstractState currentAbstractState;
     private AbstractState prevAbstractState;
+
+    public void setUp(String fileName) {
+        game = new Game(fileName);
+    }
 
     public Context(AbstractState initialState) {
         currentAbstractState = initialState;
@@ -21,5 +25,9 @@ public class Context {
 
     public AbstractState getCurrentAbstractState() {
         return currentAbstractState;
+    }
+
+    public Game getGame() {
+        return game;
     }
 }
