@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class IOAdapter {
     private static IOAdapter Instance;
-    private Scanner scanner;
+    private final Scanner scanner;
 
-    private IOAdapter(){
+    private IOAdapter() {
         scanner = new Scanner(System.in);
     }
 
@@ -26,7 +26,7 @@ public class IOAdapter {
     }
 
     public void clearScreen() {
-        if(OSData.getOS() == OSData.OS.LINUX){
+        if (OSData.getOS() == OSData.OS.LINUX) {
             System.out.print("\033[H\033[2J");
         }
     }

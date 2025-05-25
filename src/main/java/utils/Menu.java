@@ -7,7 +7,7 @@ import java.util.List;
 import java.lang.Character.UnicodeBlock;
 
 public class Menu {
-    private static final List<String> MENU_LIST ;
+    private static final List<String> MENU_LIST;
     private static final IOAdapter adapter;
 
     static {
@@ -24,7 +24,7 @@ public class Menu {
 
     public static char handleGameInput() {
         String input = adapter.read();
-        if (Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC){
+        if (Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC) {
             return input.charAt(0);
         } else {
             return '1';
@@ -34,7 +34,7 @@ public class Menu {
     public static void renderMenu() {
         adapter.write("Главное меню:");
         for (int i = 0; i < MENU_LIST.size(); i++) {
-            adapter.write((i + 1) +". "+ MENU_LIST.get(i));
+            adapter.write((i + 1) + ". " + MENU_LIST.get(i));
         }
     }
 }

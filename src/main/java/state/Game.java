@@ -2,14 +2,14 @@ package state;
 
 import utils.IOAdapter;
 
-public class Game extends AbstractState{
+public class Game extends AbstractState {
 
-    public void run(){
+    public void run() {
         render();
         System.exit(0);
     }
 
-    public void render(){
+    public void render() {
         IOAdapter.getInstance().write("Game should be here");
     }
 
@@ -20,6 +20,5 @@ public class Game extends AbstractState{
 
     @Override
     protected void goToAlternativeState() {
-        return;
     }
 }

@@ -12,7 +12,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Dictionary {
     private final ArrayList<String> words = new ArrayList<>();
 
-    public Dictionary(){}
+    public Dictionary() {
+    }
 
     public Dictionary(String filename) {
         readWordsFromFile(filename);
@@ -22,14 +23,14 @@ public class Dictionary {
         return words;
     }
 
-    public String getRandomWord(){
+    public String getRandomWord() {
         return words.get(ThreadLocalRandom.current().nextInt(0, words.size()));
     }
 
     boolean readWordsFromFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
-            while (reader.ready()){
+            while (reader.ready()) {
                 words.add(reader.readLine());
             }
             return true;
