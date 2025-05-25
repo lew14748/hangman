@@ -22,13 +22,11 @@ public class Menu {
         } else return "WRONG INPUT";
     }
 
-    public static char validateGameInput() {
+    public static String validateGameInput() {
         String input = adapter.read();
-        if (Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC) {
-            return input.charAt(0);
-        } else {
-            return '1';
-        }
+        if (!input.isBlank() && Character.UnicodeBlock.of(input.charAt(0)) == UnicodeBlock.CYRILLIC) {
+            return String.valueOf(input.toLowerCase().charAt(0));
+        } else return "WRONG INPUT";
     }
 
     public static void renderMenu() {
