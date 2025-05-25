@@ -27,7 +27,8 @@ public class Game extends AbstractState {
     private void guessLetter(){
         String validatedGuessedLetter = String.valueOf(Menu.validateGameInput());
         if(!validatedGuessedLetter.equals("WRONG INPUT")){
-            getContext().getGame().getHiddenWord().guessLetter(validatedGuessedLetter);
+            if (!getContext().getGame().getHiddenWord().guessLetter(validatedGuessedLetter))
+                getContext().getGame().decreaseLifeCount();
         }
     }
 
