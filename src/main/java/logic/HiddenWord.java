@@ -17,8 +17,8 @@ public class HiddenWord {
     public boolean guessLetter(String letter) {
         if (actualWord.contains(letter)) {
             while (templateWord.contains(letter)) {
-                templateWord.set(actualWord.indexOf(letter), "_");
-                maskedWord.set(actualWord.indexOf(letter), letter);
+                maskedWord.set(templateWord.indexOf(letter), letter);
+                templateWord.set(templateWord.indexOf(letter), "_");
             }
             return true;
         }
