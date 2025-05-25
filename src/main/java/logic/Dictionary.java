@@ -7,9 +7,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Dictionary {
-    private ArrayList<String> Words = new ArrayList<>();
+    private final ArrayList<String> words = new ArrayList<>();
 
     public Dictionary(){}
 
@@ -18,14 +19,18 @@ public class Dictionary {
     }
 
     public ArrayList<String> getWords() {
-        return Words;
+        return words;
+    }
+
+    public String getRandomWord(){
+        return words.get(ThreadLocalRandom.current().nextInt(0, words.size()));
     }
 
     boolean readWordsFromFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
             while (reader.ready()){
-                Words.add(reader.readLine());
+                words.add(reader.readLine());
             }
             return true;
         } catch (FileNotFoundException e) {
