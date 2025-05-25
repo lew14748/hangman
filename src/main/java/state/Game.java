@@ -16,6 +16,7 @@ public class Game extends AbstractState {
     public void render() {
         adapter.clearConsole();
         getContext().getGame().getHiddenWord().printMaskedWord();
+        getContext().getGame().getHiddenWord().printWronglyGuessedLetters();
         adapter.write("Осталось жизней - " + getContext().getGame().getLifeCounter());
     }
 

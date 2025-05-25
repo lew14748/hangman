@@ -11,6 +11,7 @@ public class GameOver extends AbstractState {
     public void render() {
         adapter.clearConsole();
         Menu.renderTitleBanner();
+        adapter.write("Было загадано слово - " + String.join("", getContext().getGame().getHiddenWord().getActualWord()));
         if (getContext().getGame().checkWin()) {
             adapter.write("Вы победили, желаете сыграть еще?");
         } else {

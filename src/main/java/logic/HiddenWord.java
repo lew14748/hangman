@@ -43,6 +43,10 @@ public class HiddenWord {
         IOAdapter.getInstance().write(String.join(" ", maskedWord));
     }
 
+    public void printWronglyGuessedLetters(){
+        IOAdapter.getInstance().write("Неверные догадки: " + (String.join(" ", wronglyGuessedLetters)));
+    }
+
     public List<String> getActualWord() {
         return actualWord;
     }
