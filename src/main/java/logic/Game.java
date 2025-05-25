@@ -6,7 +6,6 @@ public class Game {
     private Dictionary dictionary;
     private HiddenWord hiddenWord;
     private int lifeCounter = 7;
-    private int guessedLettersCounter = 0;
     public Game() {
     }
 
@@ -17,7 +16,7 @@ public class Game {
     }
 
     public boolean checkWin(){
-        return (guessedLettersCounter == hiddenWord.getActualWord().size());
+        return (hiddenWord.getCorrectlyGuessedLettersCount() == hiddenWord.getActualWord().size());
     }
 
     public boolean checkLose(){
@@ -52,11 +51,5 @@ public class Game {
         this.hiddenWord = hiddenWord;
     }
 
-    public void increaseGuessedLettersCounter() {
-        guessedLettersCounter++;
-    }
 
-    public int getGuessedLettersCounter() {
-        return guessedLettersCounter;
-    }
 }
