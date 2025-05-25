@@ -10,12 +10,14 @@ import java.util.Collections;
 
 public class HiddenWord {
     private final ArrayList<String> actualWord = new ArrayList<>();
+    private final ArrayList<String> templateWord = new ArrayList<>();
     private final ArrayList<String> maskedWord = new ArrayList<>();
 
 
     public boolean guessLetter(String letter) {
         if (actualWord.contains(letter)) {
-            while (actualWord.contains(letter)) {
+            while (templateWord.contains(letter)) {
+                templateWord.set(actualWord.indexOf(letter), "_");
                 maskedWord.set(actualWord.indexOf(letter), letter);
             }
             return true;
@@ -25,6 +27,8 @@ public class HiddenWord {
 
     public void initWords(@NotNull String word) {
         Collections.addAll(actualWord, word.split(""));
+        Collections.addAll(templateWord, word.split(""));
+
         for (int i = 0; i < actualWord.size(); i++) maskedWord.add("_");
     }
 
