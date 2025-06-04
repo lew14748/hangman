@@ -6,8 +6,8 @@ public class Game {
     private int lifeCounter = 7;
 
 
-    public Game(String filename) {
-        dictionary = new Dictionary(filename);
+    public Game() {
+        dictionary = new Dictionary();
         hiddenWord = new HiddenWord();
         hiddenWord.initWords(dictionary.getRandomWord());
     }

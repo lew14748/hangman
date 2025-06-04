@@ -6,10 +6,9 @@ public class Context {
 
     private Game game;
     private AbstractState currentAbstractState;
-    private AbstractState prevAbstractState;
 
-    public void setUp(String fileName) {
-        game = new Game(fileName);
+    public void setUp() {
+        game = new Game();
     }
 
     public Context(AbstractState initialState) {
@@ -18,7 +17,6 @@ public class Context {
     }
 
     public void goToState(AbstractState newAbstractState) {
-        prevAbstractState = currentAbstractState;
         currentAbstractState = newAbstractState;
         currentAbstractState.setContext(this);
     }
