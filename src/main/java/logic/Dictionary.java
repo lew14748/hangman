@@ -15,7 +15,6 @@ public class Dictionary {
     }
 
 
-
     public String getRandomWord() {
         return words.get(ThreadLocalRandom.current().nextInt(0, words.size()));
     }
@@ -27,7 +26,7 @@ public class Dictionary {
             while (reader.ready()) {
                 words.add(reader.readLine());
             }
-            System.out.println(words);
+
         } catch (FileNotFoundException e) {
             IOAdapter.getInstance().write("FileNotFoundException: Dictionary not found");
         } catch (IOException e) {
